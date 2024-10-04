@@ -6,8 +6,26 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
+.main-text {
+  padding-top: 150px;
+}
 .main-text h2 {
   font-size: 64px;
   color: #ffffff;
   font-weight: 600;
+}
+
+.text-two h3 {
+  color: #ffffff;
+  font-size: 52px;
+}
+.text-two h3 span {
+  background: linear-gradient(to right, #52eba1 67%, #355690);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.custom-container {
+  max-width: 90%;
+  margin: 0 auto;
 }
