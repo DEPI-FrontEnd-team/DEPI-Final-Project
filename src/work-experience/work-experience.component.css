@@ -1,7 +1,13 @@
-.wx {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
   background-color: #151515;
   height: 100vh; /* You must set a specified height */
-  background-image: url(../shared/assets/workex/bg.png);
+  background-image: url(../shared/assets/workex/bg.svg);
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -22,7 +28,7 @@
 .text-two h3 span {
   background: linear-gradient(to right, #52eba1 67%, #355690);
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .custom-container {
