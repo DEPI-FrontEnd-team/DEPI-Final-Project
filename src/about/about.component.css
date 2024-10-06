@@ -60,7 +60,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100% - 5.25rem);
+        /* height: calc(100% - 5.25rem); */
         flex-wrap: wrap;
         overflow: hidden;
 
@@ -109,11 +109,15 @@
 }
 
 .linesimg {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     position: absolute;
-    min-width: 700px;
+    z-index: 0;
+    min-width: 500px;
     width: 40%;
     margin-left: auto;
-    right: 0;
+    right: calc(0% + 2.25rem);
     img {
         object-fit: cover;
         width: 100%;
@@ -146,7 +150,7 @@
         .linesimg {
             right: inherit !important;
             width: 80%;
-            min-width: initial !important;
+            min-width: 450px !important;
         }
 
         .txtContainer{
