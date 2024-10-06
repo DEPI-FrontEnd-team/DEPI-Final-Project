@@ -175,7 +175,8 @@
 
     #aboutMe {
         background-image: url(../shared/assets/about/bg-mobile.svg);
-        background-position: initial !important;
+        background-position: center  !important;
+        background-size: contain !important;
     }
      
     #aboutMe::before {

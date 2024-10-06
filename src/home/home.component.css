@@ -28,7 +28,7 @@ main {
     height: 100vh;
     max-height: 100%;
     background-color: var(--bg);
-    background-image: url(../shared/assets/home/homebg-desk.svg);
+    background-image: url(../shared/assets/home/homebg-desk.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,6 +41,7 @@ main {
         position: relative;
         width: 100%;
         height: 100%;
+
         img {
             /* min-width: ;
             max-width: 1100px; */
@@ -51,6 +52,7 @@ main {
             transform: translate(-50%,0);
             bottom: 0;
             z-index: 1;
+            pointer-events: none;
         }
     }
     .txtContainer {
@@ -61,6 +63,7 @@ main {
         position: relative;
         height: 100%;
         transition: all 100ms ease;
+        user-select: none;
         h3 {
             font-size: clamp(1.5rem, 1rem + 3.6vw, 4rem);
         }
@@ -78,6 +81,8 @@ main {
         text-align: center;
         background-clip: text;
         mix-blend-mode: overlay;
+        pointer-events: none;
+        user-select: none;
     }
 
 }

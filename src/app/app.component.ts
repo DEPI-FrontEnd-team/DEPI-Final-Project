@@ -12,14 +12,15 @@ import { BlogsComponent } from '../blogs/blogs.component';
 import { TestmonialsComponent } from '../testmonials/testmonials.component';
 import { ContactComponent } from '../contact/contact.component';
 import { CallToActionComponent } from '../call-to-action/call-to-action.component';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HomeComponent, AboutComponent,
-  WorkExperienceComponent,CoursesComponent,ImpactMenaComponent,
-  ChannelOverviewComponent,SkilsComponent,SpeakingsComponent,
-  BlogsComponent, TestmonialsComponent,ContactComponent,CallToActionComponent],
+  imports: [RouterOutlet, HomeComponent, AboutComponent,
+    WorkExperienceComponent, CoursesComponent, ImpactMenaComponent,
+    ChannelOverviewComponent, SkilsComponent, SpeakingsComponent,
+    BlogsComponent, TestmonialsComponent, ContactComponent, CallToActionComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
