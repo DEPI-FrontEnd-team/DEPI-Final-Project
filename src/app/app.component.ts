@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, Component, HostListener, inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent} from '../home/home.component';
 import { AboutComponent } from '../about/about.component';
@@ -13,6 +13,9 @@ import { TestmonialsComponent } from '../testmonials/testmonials.component';
 import { ContactComponent } from '../contact/contact.component';
 import { CallToActionComponent } from '../call-to-action/call-to-action.component';
 import { NavbarComponent } from "../navbar/navbar.component";
+import { gsap, TweenMax,Power4,Power1, TweenLite,} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +23,68 @@ import { NavbarComponent } from "../navbar/navbar.component";
   imports: [RouterOutlet, HomeComponent, AboutComponent,
     WorkExperienceComponent, CoursesComponent, ImpactMenaComponent,
     ChannelOverviewComponent, SkilsComponent, SpeakingsComponent,
-    BlogsComponent, TestmonialsComponent, ContactComponent, CallToActionComponent, NavbarComponent],
+    BlogsComponent, TestmonialsComponent, ContactComponent, CallToActionComponent, NavbarComponent,
+    
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements AfterContentInit {
+
+  // home star animation // load up animations
+  ngAfterContentInit(): void {
+
+    // if (isPlatformBrowser(this.platformId)) {}
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo (
+      ".homestar",
+      {y: -200},
+      {y: 0, duration: 1.25, ease: "power3.out"}
+    )
+    gsap.fromTo (
+      "#mainNav",
+      {y: -100},
+      {y: 0, duration: 1, ease: "power1.out"}
+    )
+
+   
+  }
+
+  // nav collapse animation
+  
+
+  @HostListener ('window:scroll') navCollapse() {
+    // navsections
+    let mainNav = document.querySelector('#mainNav');
+    let navbar = document.querySelector('#navbar')
+    let navbarWhole = document.querySelector('.navigationWrapper');
+    // items
+    let navFavBtn:any = document.querySelector('.favBtn');
+    let navLogo:any = document.querySelector('.logo');
+    let home:any = document.querySelector('#home')
+
+    let rect = navLogo.getBoundingClientRect();
+    let newRect = navLogo.getBoundingClientRect();
+
+
+    if (window.scrollY >= 200) {
+      mainNav?.classList.add('scrolled');
+      navbar?.classList.add('scrolled');
+      navbarWhole?.append(navFavBtn)
+      navbarWhole?.prepend(navLogo)
+
+    } else {
+      navbar?.classList.remove('scrolled');
+      navbar?.append(navFavBtn)
+      navbar?.prepend(navLogo)
+    }
+
+
+
+  }
+
+
   title = 'Portfolio';
 }

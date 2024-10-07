@@ -34,40 +34,40 @@ nav {
     .logo {
         cursor: pointer;
         user-select: none;
+        transition: 500ms all ease;
     }
 }
-
 .navigationWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 1rem 3rem; */
+    transition: all 350ms ease;
 
     .itemsWrapper {
-
         display: flex;
-        /* background-color: hsl(from var(--darkgreen) h s l / 0.3);
-        backdrop-filter: blur(10px); */
         border-radius: 30px;
         gap: 2rem;
-    
+
         .navigationItem {
 
             padding: 0.5rem 1.2rem;
             border-radius: 2rem;
             cursor: pointer;
+            transition: all 350ms ease;
 
             h3 {
                 font-size: 1.2rem;
                 user-select: none;
+                transition: all 350ms ease;
             }
+        }
 
+        .navigationItem:hover {
+            color: hsl(199.8, 100%, 65.5%);
+            transition: all 150ms ease;
         }
     }
 }
-
-
-
 
 .favBtn {
 
@@ -89,4 +89,38 @@ nav {
     transform: scale(1.1);
     background: linear-gradient(-90deg, hsl(from var(--green) h s l / 0.20) 0%, hsl(from var(--blue) h s l / 0.20) 100%);
     transition: all 150ms ease;
+}
+/* collapsed navbar */
+#navbar.scrolled{
+    justify-content: center;
+    .logo {
+        width: 10%;
+        transition: 500ms all ease;
+        img {
+            width: 100%;
+        }
+        
+    }
+    .navigationWrapper {
+        background-color: hsl(from var(--darkgreen) h s l / 0.3);
+        backdrop-filter: blur(10px); 
+        border-radius: 30px;
+        transition: all 250ms ease;
+        
+        .itemsWrapper {
+            gap:  1rem !important;
+            .navigationItem h3 {
+                font-size: 1.1rem;
+                transition: all 250ms ease;
+            }
+        }
+    }
+
+    .favBtn {
+        padding: 0.4rem 1rem;
+        h3 {
+            font-size: 1.1rem;
+        }
+        
+    }
 }
