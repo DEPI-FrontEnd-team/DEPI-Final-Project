@@ -22,7 +22,6 @@ export class AboutComponent {
     let textContainer:any = document.querySelector('#aboutMe .txtContainer');
     let imgsWrapper:any = document.querySelector('#aboutMe .imgsWrapper');
 
-
     if (this.screenWidth <= 970 || this.screenMatch.matches) {
       
       mainContent?.insertBefore(imgsWrapper,textContainer);

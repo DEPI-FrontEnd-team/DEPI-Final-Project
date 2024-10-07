@@ -16,6 +16,7 @@ import { NavbarComponent } from "../navbar/navbar.component";
 import { gsap, TweenMax,Power4,Power1, TweenLite,} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
+import { trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -46,12 +47,21 @@ export class AppComponent implements AfterContentInit {
     gsap.fromTo (
       "#mainNav",
       {y: -100},
-      {y: 0, duration: 1, ease: "power1.out"}
+      {y: 0, duration: 1, ease: "power1.in"}
     )
 
-   
+    
   }
+  constructor(){}
+  ngOnInit() {
 
+    setTimeout(() => {
+      console.log(document.body.scrollTop)
+    }, 10);
+  
+    
+  }
+  
   // nav collapse animation
   
 
@@ -80,8 +90,6 @@ export class AppComponent implements AfterContentInit {
       navbar?.append(navFavBtn)
       navbar?.prepend(navLogo)
     }
-
-
 
   }
 
