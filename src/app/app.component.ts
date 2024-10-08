@@ -66,6 +66,7 @@ export class AppComponent implements AfterContentInit {
   
 
   @HostListener ('window:scroll') navCollapse() {
+    let screenWidth = window.innerWidth;
     // navsections
     let mainNav = document.querySelector('#mainNav');
     let navbar = document.querySelector('#navbar')
@@ -77,15 +78,16 @@ export class AppComponent implements AfterContentInit {
 
     let rect = navLogo.getBoundingClientRect();
     let newRect = navLogo.getBoundingClientRect();
+    console.log(screenWidth)
 
 
-    if (window.scrollY >= 200) {
+    if (window.scrollY >= 200 && screenWidth >= 755) {
       mainNav?.classList.add('scrolled');
       navbar?.classList.add('scrolled');
       navbarWhole?.append(navFavBtn)
       navbarWhole?.prepend(navLogo)
 
-    } else {
+    } else if (screenWidth > 755) {
       navbar?.classList.remove('scrolled');
       navbar?.append(navFavBtn)
       navbar?.prepend(navLogo)
@@ -93,6 +95,33 @@ export class AppComponent implements AfterContentInit {
 
   }
 
+  @HostListener ('window:resize') scrolledNav() {
+    let screenWidth = window.innerWidth;
+    // navsections
+    let mainNav = document.querySelector('#mainNav');
+    let navbar = document.querySelector('#navbar')
+    let navbarWhole = document.querySelector('.navigationWrapper');
+    // items
+    let navFavBtn:any = document.querySelector('.favBtn');
+    let navLogo:any = document.querySelector('.logo');
+    let home:any = document.querySelector('#home')
 
+
+
+
+    if (window.scrollY >= 200 && screenWidth >= 755) {
+      mainNav?.classList.add('scrolled');
+      navbar?.classList.add('scrolled');
+      navbarWhole?.append(navFavBtn)
+      navbarWhole?.prepend(navLogo)
+
+      } else if (screenWidth <= 755) {
+        mainNav?.classList.remove('scrolled');
+        navbar?.classList.remove('scrolled');
+      }
+  }
+
+
+  
   title = 'Portfolio';
 }
