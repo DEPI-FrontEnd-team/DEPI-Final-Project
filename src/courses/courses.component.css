@@ -1,0 +1,81 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
+
+section {
+  background-color: #151515;
+  min-height: 100vh; 
+  background-image: url(../shared/assets/courses/bg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+h2, h3, p {
+  color: #fff;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+
+.d-flex {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+}
+
+.course-card {
+  transition: all 0.5s ease-in-out;
+  display: flex; 
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  text-align: center;
+  width: 18rem; 
+  height: 350px; 
+  flex-shrink: 0; 
+  font-size: 12px;
+}
+
+.active-card {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.left-card, .right-card {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+.custom-arrow {
+  width: 40px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  z-index: 2;
+}
+.carousel-control-prev {
+  left: 10px;
+}
+.carousel-control-next {
+  right: 10px;
+}
