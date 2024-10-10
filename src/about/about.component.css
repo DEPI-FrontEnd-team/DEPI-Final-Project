@@ -200,3 +200,23 @@
         display: none;
     }
 }
+
+
+/* height */
+@media screen and (min-height: 930px) {
+    .contentWrapper {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            margin-top: 1.5rem;
+        }
+
+        .mainContent {
+            margin: auto;
+            align-self: center;
+        }
+
+    }
+
+}
