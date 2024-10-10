@@ -8,13 +8,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './work-experience.component.html',
   styleUrl: './work-experience.component.css',
 })
-export class WorkExperienceComponent {
-  isBouncing = false;
-
-  toggleBounce() {
-    this.isBouncing = true;
-    setTimeout(() => {
-      this.isBouncing = false;
-    }, 1000); // Duration matches the animation time
-  }
-}
+export class WorkExperienceComponent {}

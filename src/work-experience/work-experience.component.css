@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+:host {
+  /* primary */
+  --bg: #151515;
+  --deftext: #f2f2f2;
+  --lighttext: #e4e4e4;
+  --faded: #26292c;
+  /* accents */
+  /* blue */
+  --blue: #407bff;
+  --fadedblue: #355690;
+  --darkblue: #1c2830;
+  --darkerblue: #1a2025;
+  --black-blue: #141b20;
+  /* green */
+  --green: #52eba1;
+  --darkgreen: #113238;
+  --darkergreen: #1a2421;
+}
+
 section {
   background-color: #151515;
   height: 100vh; /* You must set a specified height */
@@ -13,17 +32,22 @@ section {
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 .main-text {
-  padding-top: 150px;
+  padding-top: 5.25rem;
 }
+
+.main-star {
+  padding: 1.2rem 0;
+}
+
 .main-text h2 {
-  font-size: 64px;
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.8rem);
   color: #ffffff;
   font-weight: 600;
 }
 
 .text-two h3 {
   color: #ffffff;
-  font-size: 52px;
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.6rem);
 }
 .text-two h3 span {
   background: linear-gradient(to right, #52eba1 67%, #355690);
@@ -36,15 +60,17 @@ section {
   margin: 0 auto;
 }
 
-/* example.component.css */
-.animated-div {
-  width: 200px;
-  height: 200px;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+.job-text {
+  color: var(--deftext);
+}
+.job-text h4 {
+  font-size: clamp(0.9rem, 0.9rem + 2.5vw, 2.5rem);
+}
+
+.job-text span:first-of-type {
+  font-weight: 300;
+}
+.job-text span:last-child {
+  font-size: 13px;
+  font-weight: 100;
 }
