@@ -1,7 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { gsap, TweenMax,Power4,Power1, TweenLite,} from 'gsap';
+import { gsap, TweenMax,Power4,Power1, TweenLite,Expo,} from 'gsap';
+import { delay } from 'rxjs';
 
 
 @Component({
@@ -39,25 +40,49 @@ export class NavbarComponent {
   }
 
   showNavBar () {
-      let navbar = document.querySelector('#navbar')
+      let navbar = document.querySelector('#navbar') as HTMLHtmlElement;
       let main = document.querySelector('main')
       let body = document.querySelector('body')
-
-
+      let mobile = document.querySelector('#navbar.mobile') as HTMLHtmlElement;
       navbar?.classList.toggle('active');
+
+      gsap.registerPlugin(TweenMax)
+
       // morphing the burger butto to be a close button
       if (navbar?.classList.contains('active')) {
-
+        TweenMax.fromTo('.active',0.2,
+          {
+            height: 80,
+            ease:Expo.easeInOut,
+          },
+          {
+            height: "100vh",
+            ease:Expo.easeInOut,
+          }
+        )
         main!.style.pointerEvents = "none";
+        setTimeout(()=> {
+        body!.style.height = "100%"
+        body!.style.overflow = "hidden"
+        },100)
+
+      } else {
+        main!.style.pointerEvents = "auto";
         body!.style.height = "100%"
         body!.style.overflow = "hidden"
 
-      } else {
+        TweenMax.fromTo('.mobile',0.2,
+          {
+            height: window.innerHeight,
+            ease:Expo.easeInOut,
+          },
+          {
+            height: 80,
+            ease:Expo.easeInOut,
+          }
+        )
+        navbar!.style.height = "auto";
 
-        main!.style.pointerEvents = "auto";
-        body!.style.height = "inherit"
-        body!.style.overflow = "inherit"
-        
       }
       
 

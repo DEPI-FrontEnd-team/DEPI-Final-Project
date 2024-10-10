@@ -13,10 +13,11 @@ import { TestmonialsComponent } from '../testmonials/testmonials.component';
 import { ContactComponent } from '../contact/contact.component';
 import { CallToActionComponent } from '../call-to-action/call-to-action.component';
 import { NavbarComponent } from "../navbar/navbar.component";
-import { gsap, TweenMax,Power4,Power1, TweenLite,Power3,} from 'gsap';
+import { gsap, TweenMax,Power4,Power1, TweenLite,Power3, Expo,} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
 import { trigger } from '@angular/animations';
+import { scan } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -39,16 +40,94 @@ export class AppComponent implements AfterContentInit {
     // if (isPlatformBrowser(this.platformId)) {}
     
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo (
-      ".homestar",
-      {y: -200},
-      {y: 0, duration: 1.25, ease: "power3.out"}
+    gsap.registerPlugin(TweenMax)
+    TweenMax.fromTo (
+      ".homestar",1.5,
+      {
+        y: 2000,
+        scale: 50,
+        rotation: 280,
+        ease: Expo.easeInOut,
+        delay: 2.5,
+      },
+      {
+        y: 0,
+        scale: 1,
+        rotation: 0,
+        duration: 1.5,
+        ease: "power3.out",
+      }
     )
-    gsap.fromTo (
-      "#mainNav",
-      {y: -100},
-      {y: 0, duration: 1, ease: "power1.in"}
-    )
+    
+    TweenMax.fromTo('.helloim',1,
+    {
+      y: 100,
+      opacity: 0,
+      ease:Expo.easeInOut
+    },
+    {
+      y: 0,
+      opacity: 1,
+      ease:Expo.easeInOut,
+      delay: 1
+    }
+  )
+  TweenMax.fromTo('.osamamoh',1,
+    {
+      y: 100,
+      opacity: 0,
+      ease:Expo.easeInOut,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      ease:Expo.easeInOut,
+      delay: 1.5
+    }
+  )
+  TweenMax.fromTo('.osamaImg',1,
+    {
+      y: 100,
+      opacity: 0,
+      ease:Expo.easeInOut,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      ease:Expo.easeInOut,
+      delay: 1.5
+    }
+  )
+  TweenMax.fromTo('.elzero',1,
+    {
+      y: 200,
+      opacity: 0,
+      scale: 2,
+      ease:Expo.easeInOut,
+    },
+    {
+      y: 80,
+      opacity: 1,
+      scale: 1,
+      ease:Expo.easeInOut,
+      delay: 1.5
+    }
+  )
+
+  TweenMax.fromTo('#mainNav',1,
+    {
+      y: -200,
+      opacity: 0,
+      ease:Expo.easeInOut,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      ease:Expo.easeInOut,
+      delay: 2
+    }
+  )
+
     
   }
   // constructor(){}
