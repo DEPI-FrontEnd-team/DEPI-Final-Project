@@ -31,7 +31,7 @@ section {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
-.main-text {
+.header {
   padding-top: 5.25rem;
 }
 
@@ -39,38 +39,38 @@ section {
   padding: 1.2rem 0;
 }
 
-.main-text h2 {
+.header h2 {
   font-size: clamp(1.5rem, 1rem + 2.6vw, 2.8rem);
   color: #ffffff;
   font-weight: 600;
 }
 
-.text-two h3 {
+.section-title h3 {
   color: #ffffff;
   font-size: clamp(1.5rem, 1rem + 2.6vw, 2.6rem);
 }
-.text-two h3 span {
+.section-title h3 span {
   background: linear-gradient(to right, #52eba1 67%, #355690);
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.custom-container {
+.content-container {
   max-width: 90%;
   margin: 0 auto;
 }
 
-.job-text {
+.job-description {
   color: var(--deftext);
 }
-.job-text h4 {
+.job-description h4 {
   font-size: clamp(0.9rem, 0.9rem + 2.5vw, 2.5rem);
 }
 
-.job-text span:first-of-type {
+.job-description span:first-of-type {
   font-weight: 300;
 }
-.job-text span:last-child {
+.job-description span:last-child {
   font-size: 13px;
   font-weight: 100;
 }
