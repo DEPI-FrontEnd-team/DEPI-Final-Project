@@ -70,14 +70,7 @@ export class AppComponent implements AfterContentInit {
     let screenWidth = window.innerWidth;
     // navsections
     let mainNav = document.querySelector('#mainNav');
-    let navbar = document.querySelector('#navbar')
-    let navbarWhole = document.querySelector('.navigationWrapper');
-    // items
-    let navFavBtn:any = document.querySelector('.favBtn');
-    let navLogo:any = document.querySelector('.logo');
-
-
-    let newRect:any;
+    let navbar = document.querySelector('.navWrapper')
     
     gsap.registerPlugin(TweenMax)
     
@@ -86,15 +79,9 @@ export class AppComponent implements AfterContentInit {
       // newRect = navLogo.getBoundingClientRect();
       mainNav?.classList.add('scrolled');
       navbar?.classList.add('scrolled');
-      navbarWhole?.prepend(navLogo)
-      navbarWhole?.append(navFavBtn)
-
 
     } else if (screenWidth > 755 ) {
       navbar?.classList.remove('scrolled');
-      navbar?.append(navFavBtn)
-      navbar?.prepend(navLogo)
-
     }
 
   }
@@ -104,10 +91,6 @@ export class AppComponent implements AfterContentInit {
     // navsections
     let mainNav = document.querySelector('#mainNav');
     let navbar = document.querySelector('#navbar')
-    let navbarWhole = document.querySelector('.navigationWrapper');
-    // items
-    let navFavBtn:any = document.querySelector('.favBtn');
-    let navLogo:any = document.querySelector('.logo');
 
 
 
@@ -116,8 +99,6 @@ export class AppComponent implements AfterContentInit {
     if (window.scrollY >= 200 && screenWidth >= 755) {
       mainNav?.classList.add('scrolled');
       navbar?.classList.add('scrolled');
-      navbarWhole?.append(navFavBtn)
-      navbarWhole?.prepend(navLogo)
 
       } else if (screenWidth <= 755) {
         mainNav?.classList.remove('scrolled');

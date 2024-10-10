@@ -31,18 +31,18 @@ nav {
     border-radius: 25px;
     padding: 0 1.25rem;
 
-    .logo {
-        cursor: pointer;
-        user-select: none;
-        transition: 500ms all ease;
-    }
+}
+
+.logo {
+    cursor: pointer;
+    user-select: none;
+    transition: 500ms all ease;
 }
 .navigationWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 350ms ease;
-
     .itemsWrapper {
         display: flex;
         border-radius: 30px;
@@ -91,40 +91,59 @@ nav {
     transition: all 150ms ease;
 }
 /* collapsed navbar */
-#navbar.scrolled{
+#navbar {
+    display: flex;
     justify-content: center;
-    .logo {
-        width: 10%;
-        transition: 500ms all ease;
-        img {
-            width: 100%;
-        }
-        
-    }
-    .navigationWrapper {
-        background-color: hsl(from var(--darkgreen) h s l / 0.3);
-        backdrop-filter: blur(10px); 
-        border-radius: 30px;
-        transition: all 250ms ease;
-        
-        .itemsWrapper {
-            gap:  1rem !important;
-            .navigationItem h3 {
-                font-size: 1.1rem;
-                transition: all 250ms ease;
-            }
-        }
-    }
+    width: 100%;
+}
 
-    .favBtn {
-        padding: 0.4rem 1rem;
-        h3 {
+.navWrapper {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 450ms ease;
+}
+.navWrapper.scrolled {
+    flex: 0;
+    background-color: hsl(from var(--darkgreen) h s l / 0.30);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 0 0.8rem;
+    transition: all 0.8s ease-out;
+    
+}
+.logo {
+    width: 70px;
+    transition: 500ms all ease;
+    img {
+        width: 100%;
+    }
+    
+}
+.navigationWrapper {
+
+    border-radius: 30px;
+    transition: all 250ms ease;
+    
+    .itemsWrapper {
+        gap:  1rem !important;
+        .navigationItem h3 {
             font-size: 1.1rem;
+            transition: all 250ms ease;
         }
-        
     }
 }
 
+.favBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    h3 {
+        font-size: 1.1rem;
+    }
+}
 /* mobile navbar */
 .mobile {
     transition: all 150ms ease;
