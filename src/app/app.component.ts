@@ -90,7 +90,7 @@ export class AppComponent implements AfterContentInit {
     let screenWidth = window.innerWidth;
     // navsections
     let mainNav = document.querySelector('#mainNav');
-    let navbar = document.querySelector('#navbar')
+    let navbar = document.querySelector('.navWrapper')
 
 
 
