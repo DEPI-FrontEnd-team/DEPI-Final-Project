@@ -32,13 +32,13 @@ import { trigger } from '@angular/animations';
 })
 export class AppComponent implements AfterContentInit {
 
+
   // home star animation // load up animations
   ngAfterContentInit(): void {
 
     // if (isPlatformBrowser(this.platformId)) {}
-
+    
     gsap.registerPlugin(ScrollTrigger);
-
     gsap.fromTo (
       ".homestar",
       {y: -200},
@@ -59,7 +59,7 @@ export class AppComponent implements AfterContentInit {
       this.rect = navLogo.getBoundingClientRect();
       console.log(this.rect)
     }, 100);
-  
+
 
   }
 
@@ -87,6 +87,7 @@ export class AppComponent implements AfterContentInit {
   }
 
   @HostListener ('window:resize') scrolledNav() {
+
     let screenWidth = window.innerWidth;
     // navsections
     let mainNav = document.querySelector('#mainNav');
