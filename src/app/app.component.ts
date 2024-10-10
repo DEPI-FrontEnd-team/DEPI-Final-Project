@@ -13,7 +13,7 @@ import { TestmonialsComponent } from '../testmonials/testmonials.component';
 import { ContactComponent } from '../contact/contact.component';
 import { CallToActionComponent } from '../call-to-action/call-to-action.component';
 import { NavbarComponent } from "../navbar/navbar.component";
-import { gsap, TweenMax,Power4,Power1, TweenLite,} from 'gsap';
+import { gsap, TweenMax,Power4,Power1, TweenLite,Power3,} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
 import { trigger } from '@angular/animations';
@@ -49,22 +49,23 @@ export class AppComponent implements AfterContentInit {
       {y: -100},
       {y: 0, duration: 1, ease: "power1.in"}
     )
-
     
   }
   constructor(){}
   ngOnInit() {
 
     setTimeout(() => {
-      console.log(document.body.scrollTop)
-    }, 10);
-  
-    
-  }
-  
-  // nav collapse animation
+      let navLogo:any = document.querySelector('.logo');
+      this.rect = navLogo.getBoundingClientRect();
+      console.log(this.rect)
+    }, 100);
   
 
+  }
+
+  // nav collapse animation
+  rect:any;
+  happend = false;
   @HostListener ('window:scroll') navCollapse() {
     let screenWidth = window.innerWidth;
     // navsections
@@ -74,23 +75,26 @@ export class AppComponent implements AfterContentInit {
     // items
     let navFavBtn:any = document.querySelector('.favBtn');
     let navLogo:any = document.querySelector('.logo');
-    let home:any = document.querySelector('#home')
-
-    let rect = navLogo.getBoundingClientRect();
-    let newRect = navLogo.getBoundingClientRect();
-    console.log(screenWidth)
 
 
-    if (window.scrollY >= 200 && screenWidth >= 755) {
+    let newRect:any;
+    
+    gsap.registerPlugin(TweenMax)
+    
+
+    if (window.scrollY >= 200 && screenWidth >= 755 ) {
+      // newRect = navLogo.getBoundingClientRect();
       mainNav?.classList.add('scrolled');
       navbar?.classList.add('scrolled');
-      navbarWhole?.append(navFavBtn)
       navbarWhole?.prepend(navLogo)
+      navbarWhole?.append(navFavBtn)
 
-    } else if (screenWidth > 755) {
+
+    } else if (screenWidth > 755 ) {
       navbar?.classList.remove('scrolled');
       navbar?.append(navFavBtn)
       navbar?.prepend(navLogo)
+
     }
 
   }
@@ -104,7 +108,7 @@ export class AppComponent implements AfterContentInit {
     // items
     let navFavBtn:any = document.querySelector('.favBtn');
     let navLogo:any = document.querySelector('.logo');
-    let home:any = document.querySelector('#home')
+
 
 
 
@@ -125,3 +129,4 @@ export class AppComponent implements AfterContentInit {
   
   title = 'Portfolio';
 }
+
