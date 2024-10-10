@@ -51,17 +51,17 @@ export class AppComponent implements AfterContentInit {
     )
     
   }
-  constructor(){}
-  ngOnInit() {
+  // constructor(){}
+  // ngOnInit() {
 
-    setTimeout(() => {
-      let navLogo:any = document.querySelector('.logo');
-      this.rect = navLogo.getBoundingClientRect();
-      console.log(this.rect)
-    }, 100);
+  //   let navbar = document.querySelector('#navbar');
+  //   if(navbar?.classList.contains('active')) {
+  //     console.log(document)
+  //   } else {
+  //     console.log(navbar);
+  //   }
 
-
-  }
+  // }
 
   // nav collapse animation
   rect:any;

@@ -40,10 +40,25 @@ export class NavbarComponent {
 
   showNavBar () {
       let navbar = document.querySelector('#navbar')
+      let main = document.querySelector('main')
+      let body = document.querySelector('body')
+
 
       navbar?.classList.toggle('active');
-
       // morphing the burger butto to be a close button
+      if (navbar?.classList.contains('active')) {
+
+        main!.style.pointerEvents = "none";
+        body!.style.height = "100%"
+        body!.style.overflow = "hidden"
+
+      } else {
+
+        main!.style.pointerEvents = "auto";
+        body!.style.height = "inherit"
+        body!.style.overflow = "inherit"
+        
+      }
       
 
 
