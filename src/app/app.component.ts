@@ -1,6 +1,12 @@
-import { AfterContentInit, Component, HostListener, inject, PLATFORM_ID } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  HostListener,
+  inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent} from '../home/home.component';
+import { HomeComponent } from '../home/home.component';
 import { AboutComponent } from '../about/about.component';
 import { WorkExperienceComponent } from '../work-experience/work-experience.component';
 import { CoursesComponent } from '../courses/courses.component';
@@ -12,8 +18,8 @@ import { BlogsComponent } from '../blogs/blogs.component';
 import { TestmonialsComponent } from '../testmonials/testmonials.component';
 import { ContactComponent } from '../contact/contact.component';
 import { CallToActionComponent } from '../call-to-action/call-to-action.component';
-import { NavbarComponent } from "../navbar/navbar.component";
-import { gsap, TweenMax,Power4,Power1, TweenLite,Power3, Expo,} from 'gsap';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { gsap, TweenMax, Power4, Power1, TweenLite, Power3, Expo } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
 import { trigger } from '@angular/animations';
@@ -22,27 +28,35 @@ import { scan } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, AboutComponent,
-    WorkExperienceComponent, CoursesComponent, ImpactMenaComponent,
-    ChannelOverviewComponent, SkilsComponent, SpeakingsComponent,
-    BlogsComponent, TestmonialsComponent, ContactComponent, CallToActionComponent, NavbarComponent,
-    
+  imports: [
+    RouterOutlet,
+    HomeComponent,
+    AboutComponent,
+    WorkExperienceComponent,
+    CoursesComponent,
+    ImpactMenaComponent,
+    ChannelOverviewComponent,
+    SkilsComponent,
+    SpeakingsComponent,
+    BlogsComponent,
+    TestmonialsComponent,
+    ContactComponent,
+    CallToActionComponent,
+    NavbarComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements AfterContentInit {
-
-
   // home star animation // load up animations
   ngAfterContentInit(): void {
-
     // if (isPlatformBrowser(this.platformId)) {}
-    
+
     gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(TweenMax)
-    TweenMax.fromTo (
-      ".homestar",1.5,
+    gsap.registerPlugin(TweenMax);
+    TweenMax.fromTo(
+      '.homestar',
+      1.5,
       {
         y: 2000,
         scale: 50,
@@ -55,80 +69,71 @@ export class AppComponent implements AfterContentInit {
         scale: 1,
         rotation: 0,
         duration: 1.5,
-        ease: "power3.out",
+        ease: 'power3.out',
       }
-    )
-    
-    TweenMax.fromTo('.helloim',1,
-    {
-      y: 100,
-      opacity: 0,
-      ease:Expo.easeInOut
-    },
-    {
-      y: 0,
-      opacity: 1,
-      ease:Expo.easeInOut,
-      delay: 1
-    }
-  )
-  TweenMax.fromTo('.osamamoh',1,
-    {
-      y: 100,
-      opacity: 0,
-      ease:Expo.easeInOut,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      ease:Expo.easeInOut,
-      delay: 1.5
-    }
-  )
-  TweenMax.fromTo('.osamaImg',1,
-    {
-      y: 100,
-      opacity: 0,
-      ease:Expo.easeInOut,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      ease:Expo.easeInOut,
-      delay: 1.5
-    }
-  )
-  TweenMax.fromTo('.elzero',1,
-    {
-      y: 200,
-      opacity: 0,
-      scale: 2,
-      ease:Expo.easeInOut,
-    },
-    {
-      y: 80,
-      opacity: 1,
-      scale: 1,
-      ease:Expo.easeInOut,
-      delay: 1.5
-    }
-  )
+    );
 
-  TweenMax.fromTo('#mainNav',1,
-    {
-      y: -200,
-      opacity: 0,
-      ease:Expo.easeInOut,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      ease:Expo.easeInOut,
-      delay: 2
-    }
-  )
+    TweenMax.fromTo(
+      '.helloim',
+      1,
+      {
+        y: 100,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: Expo.easeInOut,
+        delay: 1,
+      }
+    );
+    TweenMax.fromTo(
+      '.osamamoh',
+      1,
+      {
+        y: 100,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: Expo.easeInOut,
+        delay: 1.5,
+      }
+    );
+    TweenMax.fromTo(
+      '.osamaImg',
+      1,
+      {
+        y: 100,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: Expo.easeInOut,
+        delay: 1.5,
+      }
+    );
 
-    
+    TweenMax.fromTo(
+      '#mainNav',
+      1,
+      {
+        y: -200,
+        opacity: 0,
+        ease: Expo.easeInOut,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        ease: Expo.easeInOut,
+        delay: 2,
+      }
+    );
   }
   // constructor(){}
   // ngOnInit() {
@@ -143,51 +148,39 @@ export class AppComponent implements AfterContentInit {
   // }
 
   // nav collapse animation
-  rect:any;
+  rect: any;
   happend = false;
-  @HostListener ('window:scroll') navCollapse() {
+  @HostListener('window:scroll') navCollapse() {
     let screenWidth = window.innerWidth;
     // navsections
     let mainNav = document.querySelector('#mainNav');
-    let navbar = document.querySelector('.navWrapper')
-    
-    gsap.registerPlugin(TweenMax)
-    
+    let navbar = document.querySelector('.navWrapper');
 
-    if (window.scrollY >= 200 && screenWidth >= 755 ) {
+    gsap.registerPlugin(TweenMax);
+
+    if (window.scrollY >= 200 && screenWidth >= 755) {
       // newRect = navLogo.getBoundingClientRect();
       mainNav?.classList.add('scrolled');
       navbar?.classList.add('scrolled');
-
-    } else if (screenWidth > 755 ) {
+    } else if (screenWidth > 755) {
       navbar?.classList.remove('scrolled');
     }
-
   }
 
-  @HostListener ('window:resize') scrolledNav() {
-
+  @HostListener('window:resize') scrolledNav() {
     let screenWidth = window.innerWidth;
     // navsections
     let mainNav = document.querySelector('#mainNav');
-    let navbar = document.querySelector('.navWrapper')
-
-
-
-
+    let navbar = document.querySelector('.navWrapper');
 
     if (window.scrollY >= 200 && screenWidth >= 755) {
       mainNav?.classList.add('scrolled');
       navbar?.classList.add('scrolled');
-
-      } else if (screenWidth <= 755) {
-        mainNav?.classList.remove('scrolled');
-        navbar?.classList.remove('scrolled');
-      }
+    } else if (screenWidth <= 755) {
+      mainNav?.classList.remove('scrolled');
+      navbar?.classList.remove('scrolled');
+    }
   }
 
-
-  
   title = 'Portfolio';
 }
-
