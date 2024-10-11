@@ -1,40 +1,52 @@
 <section id="aboutMe">
-    <div class="contentWrapper">
-        <div class="title">
-            <div class="star">
-                <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.4851 0.41626L31.8667 19.0346L50.4851 25.4163L31.8667 31.7979L25.4851 50.4163L19.1035 31.7979L0.485107 25.4163L19.1035 19.0346L25.4851 0.41626Z" fill="url(#paint0_linear_20_48)"/>
-                    <defs>
-                    <linearGradient id="paint0_linear_20_48" x1="-11.2705" y1="-27.9461" x2="60.6202" y2="72.0379" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#355691"/>
-                    <stop offset="1" stop-color="#79FFFD"/>
-                    </linearGradient>
-                    </defs>
-                    </svg>
-                    
-            </div>
-            <h1>About Me</h1>
-        </div>
-        <div class="mainContent" (window:resize)="getImgOnTop()">
-            <div class="txtContainer">
-                <h3>
-                    A renowned web developer and educator, 
-                    my tutorials simplify complex topics,
-                    to both beginners and experienced developers,
-                    inspiring thousands of learners 
-                    to master front-end development.
-                </h3>
-            </div>
-            <div class="linesimg">
-                <img src="../shared/assets/about/turblentlines.png" alt="">
-            </div>
-            <div class="imgsWrapper">
-                 <div class="starsImg">
-                </div> 
-                <div class="elZeroImg" (window:resize)="changeElzeroImg()">
-                    <img [src]=elZeroImg alt="">
-                </div>
-            </div>
-        </div>
+  <div class="contentWrapper">
+    <div class="title">
+      <div class="star aboutmeStar">
+        <svg
+          width="51"
+          height="51"
+          viewBox="0 0 51 51"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M25.4851 0.41626L31.8667 19.0346L50.4851 25.4163L31.8667 31.7979L25.4851 50.4163L19.1035 31.7979L0.485107 25.4163L19.1035 19.0346L25.4851 0.41626Z"
+            fill="url(#paint0_linear_20_48)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_20_48"
+              x1="-11.2705"
+              y1="-27.9461"
+              x2="60.6202"
+              y2="72.0379"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#355691" />
+              <stop offset="1" stop-color="#79FFFD" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1>About Me</h1>
     </div>
+    <div class="mainContent" (window:resize)="getImgOnTop()">
+      <div class="txtContainer">
+        <h3>
+          A renowned web developer and educator, my tutorials simplify complex
+          topics, to both beginners and experienced developers, inspiring
+          thousands of learners to master front-end development.
+        </h3>
+      </div>
+      <div class="linesimg">
+        <img src="../shared/assets/about/turblentlines.png" alt="" />
+      </div>
+      <div class="imgsWrapper">
+        <div class="starsImg"></div>
+        <div class="elZeroImg" (window:resize)="changeElzeroImg()">
+          <img [src]="elZeroImg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
