@@ -59,6 +59,7 @@ export class NavbarComponent {
           ease: Expo.easeInOut,
         }
       );
+
       main!.style.pointerEvents = 'none';
       setTimeout(() => {
         body!.style.height = '100%';
@@ -77,6 +78,7 @@ export class NavbarComponent {
           ease: Expo.easeInOut,
         }
       );
+
       main!.style.pointerEvents = 'auto';
       body!.style.height = 'auto';
       body!.style.overflow = 'auto';
