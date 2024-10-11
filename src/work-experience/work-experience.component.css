@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+:host {
+  /* primary */
+  --bg: #151515;
+  --deftext: #f2f2f2;
+  --lighttext: #e4e4e4;
+  --faded: #26292c;
+  /* accents */
+  /* blue */
+  --blue: #407bff;
+  --fadedblue: #355690;
+  --darkblue: #1c2830;
+  --darkerblue: #1a2025;
+  --black-blue: #141b20;
+  /* green */
+  --green: #52eba1;
+  --darkgreen: #113238;
+  --darkergreen: #1a2421;
+}
+
 section {
   background-color: #151515;
   height: 100vh; /* You must set a specified height */
@@ -12,39 +31,76 @@ section {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
-.main-text {
-  padding-top: 150px;
+.header {
+  padding-top: 5.25rem;
 }
-.main-text h2 {
-  font-size: 64px;
+
+.main-star {
+  padding: 1.2rem 0;
+}
+
+.header h2 {
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.8rem);
   color: #ffffff;
   font-weight: 600;
 }
 
-.text-two h3 {
+.section-title h3 {
   color: #ffffff;
-  font-size: 52px;
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.6rem);
 }
-.text-two h3 span {
+.section-title h3 span {
   background: linear-gradient(to right, #52eba1 67%, #355690);
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.custom-container {
-  max-width: 90%;
+.content-container {
+  max-width: 80%;
   margin: 0 auto;
 }
 
-/* example.component.css */
-.animated-div {
-  width: 200px;
-  height: 200px;
-  background-color: #f0f0f0;
+.icon-group .star-icon img {
+  width: clamp(1.5rem, 1rem + 2.6vw, 2.6rem);
+  height: auto;
+}
+
+.col-custom {
+  flex: 0 0 auto;
+  width: 20%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  justify-content: start;
+}
+
+.job-description {
+  color: var(--deftext);
+}
+.job-description h4 {
+  font-size: clamp(0.7rem, 1rem + 1vw, 1.5rem);
+}
+
+.job-description span:first-of-type {
+  font-weight: 300;
+}
+.job-description span:last-child {
+  font-size: 13px;
+  font-weight: 100;
+}
+
+@media (max-width: 1200px) {
+  section {
+    height: 100%;
+    padding-bottom: 100px;
+  }
+
+  .section-title h3 {
+    /* font-size: clamp(1.5rem, 1rem + 2.6vw, 2.6rem); */
+    font-weight: 300;
+    text-align: center;
+  }
+  .section-title h3 span {
+    /* font-size: clamp(1.5rem, 2rem + 3.3vw, 4.2rem); */
+    font-weight: 500;
+    transform: scale(1.65);
+  }
 }

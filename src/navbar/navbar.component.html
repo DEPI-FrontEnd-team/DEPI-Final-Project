@@ -39,28 +39,30 @@
         <ng-container *ngTemplateOutlet="mobileNavBar"></ng-container>
     } @else { 
         <ng-template #navbar>
-            <div class="logo">
-                <img src="../shared/assets/logo trans.png" alt="">
-            </div>
-            <div class="navigationWrapper">
-                <div class="itemsWrapper">
-                    <div class="navigationItem">
-                        <h3>Home</h3>
-                    </div>
-                    <div class="navigationItem">
-                        <h3>About</h3>
-                    </div>
-                    <div class="navigationItem">
-                        <h3>Courses</h3>
-                    </div>
-                    <div class="navigationItem">
-                        <h3>Contact</h3>
-                    </div>
-
+            <div class="navWrapper">
+                <div class="logo">
+                    <img src="../shared/assets/logo trans.png" alt="">
                 </div>
-            </div>
-            <div class="favBtn">
-                <h3>Support</h3>
+                <div class="navigationWrapper">
+                    <div class="itemsWrapper">
+                        <div class="navigationItem">
+                            <h3>Home</h3>
+                        </div>
+                        <div class="navigationItem">
+                            <h3>About</h3>
+                        </div>
+                        <div class="navigationItem">
+                            <h3>Courses</h3>
+                        </div>
+                        <div class="navigationItem">
+                            <h3>Contact</h3>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="favBtn">
+                    <h3>Support</h3>
+                </div>
             </div>
         </ng-template>
         <ng-container *ngTemplateOutlet="navbar"></ng-container>
