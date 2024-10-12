@@ -118,6 +118,7 @@ nav {
   border-radius: 30px;
   padding: 0 0.8rem;
   transition: all 0.8s ease-out;
+  margin-top: 0.5rem;
 
   .logo {
     width: 60px;
