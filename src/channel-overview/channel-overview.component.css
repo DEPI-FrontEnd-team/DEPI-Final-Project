@@ -51,9 +51,10 @@ section {
   max-width: 60%;
   margin: 0 auto;
 }
-.content-container .row div {
+.content-container .row div.box {
   background-color: #151414;
   border-radius: 16px;
+  width: 49%;
 }
 .content-container .row .box-1 {
   color: var(--deftext);
@@ -67,4 +68,20 @@ section {
 }
 .content-container .row .box-1 .channel-info span:last-child {
   font-size: 1rem;
+}
+
+.content-container .row .box-2 {
+  color: var(--deftext);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container .row .box-3 {
+  color: var(--deftext);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
