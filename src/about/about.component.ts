@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap, TweenMax, Power4, Power1, TweenLite, Expo } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { trigger } from '@angular/animations';
+import AOS, { AosOptions } from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-about',
@@ -11,7 +13,7 @@ import { trigger } from '@angular/animations';
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit, OnDestroy {
   constructor() {}
   screenWidth = window.innerWidth;
   screenMatch = window.matchMedia('(max-width: 970px)');
@@ -35,28 +37,33 @@ export class AboutComponent {
       this.elZeroImg = '../shared/assets/about/Group 29.svg';
     }
 
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(TweenMax);
+    const aosOptions: AosOptions = {};
 
-    TweenMax.fromTo(
-      '.aboutmeStar',
-      5,
-      {
-        y: '-20vh',
-        scale: 1,
-        rotate: 360,
-      },
-      {
-        scrollTrigger: {
-          trigger: '.aboutmeStar',
-          start: 'top 40%',
-          end: 'bottom 60%',
-          scrub: 1,
-        },
-        y: 0,
-        scale: 1,
-      }
-    );
+    AOS.init(aosOptions);
+
+    // gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(TweenMax);
+
+    // TweenMax.fromTo(
+    //   '.aboutmeStar',
+    //   2,
+    //   {
+    //     y: '-20vh',
+    //     scale: 1,
+    //     rotate: 360,
+    //   },
+    //   {
+    //     scrollTrigger: {
+    //       trigger: '#aboutMe',
+    //       start: 'center 80%',
+    //       end: 'center center',
+    //       scrub: 1,
+    //       markers: true,
+    //     },
+    //     y: 0,
+    //     scale: 1,
+    //   }
+    // );
   }
 
   getImgOnTop() {
@@ -77,5 +84,10 @@ export class AboutComponent {
     } else if (window.innerWidth > 500) {
       this.elZeroImg = '../shared/assets/about/Group 29.svg';
     }
+  }
+
+  ngOnDestroy(): void {
+    // Optional: Refresh AOS when component is destroyed
+    AOS.refresh();
   }
 }
