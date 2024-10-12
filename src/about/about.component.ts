@@ -39,7 +39,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 
     const aosOptions: AosOptions = {};
 
-    // AOS.init(aosOptions);
+    AOS.init(aosOptions);
 
     // gsap.registerPlugin(ScrollTrigger);
     // gsap.registerPlugin(TweenMax);
