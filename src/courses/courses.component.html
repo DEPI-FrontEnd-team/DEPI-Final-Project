@@ -6,19 +6,19 @@
 
   <h3 class="mb-4">My Courses</h3>
 
-  <div class="carousel-container d-flex justify-content-center align-items-center">
-    <div class="d-flex">
+  <div class="carousel-container">
+    <div class="row justify-content-center">
       <div *ngFor="let course of courses; let i = index"
-           class="course-card"
+           class="col-lg-4 col-md-6 col-sm-12 mb-4 course-card"
            [ngClass]="{
              'active-card': isActive(i),
              'left-card': isLeft(i),
              'right-card': isRight(i),
              'dark-card': !isActive(i)
            }">
-        <div class="card" style="width: 18rem; height: 350px;">
-          <div class="card-body"> <br>
-            <h6 class="card-title">{{ course.title }}</h6> <br>
+        <div class="card h-100">
+          <div class="card-body">
+            <h6 class="card-title">{{ course.title }}</h6>
             <p class="card-text">{{ course.description }}</p>
           </div>
         </div>

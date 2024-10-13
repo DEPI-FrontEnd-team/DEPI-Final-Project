@@ -1,16 +1,16 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; 
+  height: 100%;
 }
 
 section {
   background-color: #151515;
-  min-height: 100vh; 
+  min-height: 100vh;
   background-image: url(../shared/assets/courses/bg.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
 
 h2, h3, p {
@@ -20,24 +20,23 @@ h2, h3, p {
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-
 .d-flex {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; 
+  gap: 20px;
 }
 
 .course-card {
   transition: all 0.5s ease-in-out;
-  display: flex; 
+  display: flex;
 }
 
 .card {
@@ -45,9 +44,9 @@ h2, h3, p {
   border: none;
   color: #fff;
   text-align: center;
-  width: 18rem; 
-  height: 350px; 
-  flex-shrink: 0; 
+  width: 18rem;
+  height: 350px; /* Original desktop card height */
+  flex-shrink: 0;
   font-size: 12px;
 }
 
@@ -73,9 +72,56 @@ h2, h3, p {
   border: none;
   z-index: 2;
 }
+
 .carousel-control-prev {
   left: 10px;
 }
+
 .carousel-control-next {
   right: 10px;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+  /* For tablets and mobile devices */
+  .course-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 14rem; /* Adjust card width for mobile */
+    height: 250px; /* Shorter height for mobile */
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .custom-arrow {
+    width: 30px;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    top: 60%; /* Adjust arrow position for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  /* For small mobile screens */
+  .card {
+    width: 12rem; /* Adjust card width for small screens */
+    height: 200px; /* Even shorter height for small screens */
+    font-size: 10px;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+
+  .custom-arrow {
+    width: 25px;
+  }
 }
