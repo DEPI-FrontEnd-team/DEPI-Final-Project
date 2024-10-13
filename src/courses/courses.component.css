@@ -45,7 +45,7 @@ h2, h3, p {
   color: #fff;
   text-align: center;
   width: 18rem;
-  height: 350px; /* Original desktop card height */
+  height: 350px; 
   flex-shrink: 0;
   font-size: 12px;
 }
@@ -81,9 +81,7 @@ h2, h3, p {
   right: 10px;
 }
 
-/* Media Queries for mobile responsiveness */
 @media (max-width: 768px) {
-  /* For tablets and mobile devices */
   .course-card {
     width: 100%;
     display: flex;
@@ -91,8 +89,8 @@ h2, h3, p {
   }
 
   .card {
-    width: 14rem; /* Adjust card width for mobile */
-    height: 250px; /* Shorter height for mobile */
+    width: 14rem; 
+    height: 250px; 
     font-size: 12px;
   }
 
@@ -105,15 +103,14 @@ h2, h3, p {
   }
 
   .carousel-control-prev, .carousel-control-next {
-    top: 60%; /* Adjust arrow position for mobile */
+    top: 60%; 
   }
 }
 
 @media (max-width: 576px) {
-  /* For small mobile screens */
   .card {
-    width: 12rem; /* Adjust card width for small screens */
-    height: 200px; /* Even shorter height for small screens */
+    width: 12rem; 
+    height: 200px; 
     font-size: 10px;
   }
 
