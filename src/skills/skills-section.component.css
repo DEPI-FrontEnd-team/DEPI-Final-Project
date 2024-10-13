@@ -1,0 +1,105 @@
+/* Basic Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111; /* Dark background for contrast */
+  color: #fff;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+.skills-section {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header Styles */
+.skills-header h1 {
+  font-size: 2.5em;
+}
+
+.skills-header p {
+  font-size: 1.2em;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* Skills Cards Styles */
+.skills-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.skill-card {
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%; /* For desktop */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #111;
+}
+
+.skill-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Skills Grid Styles */
+.skills-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: transparent; /* No background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  height: 75px;
+  width: 75px;
+}
+
+.grid-item img {
+  max-width: 80%; /* Responsive sizing for the logos */
+  max-height: 80%; /* Keep the logos within the grid box */
+  object-fit: contain; /* Ensure logos maintain their aspect ratio */
+}
+
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .skills-cards {
+
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-card {
+    width: 264px;
+    height: 212px;
+    margin-bottom: 15px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* 2 columns instead of 3 */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* Single column for small screens */
+  }
+}
