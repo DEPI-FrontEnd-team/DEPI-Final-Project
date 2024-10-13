@@ -81,7 +81,7 @@ h2, h3, p {
   right: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .course-card {
     width: 100%;
     display: flex;
@@ -104,21 +104,5 @@ h2, h3, p {
 
   .carousel-control-prev, .carousel-control-next {
     top: 60%; 
-  }
-}
-
-@media (max-width: 576px) {
-  .card {
-    width: 12rem; 
-    height: 200px; 
-    font-size: 10px;
-  }
-
-  .card-title {
-    font-size: 12px;
-  }
-
-  .custom-arrow {
-    width: 25px;
   }
 }
