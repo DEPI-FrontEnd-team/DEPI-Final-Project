@@ -1,1 +1,41 @@
-<p>speakings works!</p>
+<div class="speaking-section">
+  <div class="speaking-header">
+    <h1>Speaking Engagements & Media Features</h1>
+    <p>Explore talks, videos, and media.</p>
+  </div>
+
+  <!-- Swiper Container -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of mediaItems">
+        <div class="card">
+          <ng-container [ngSwitch]="item.type">
+            <!-- Image Slide -->
+            <img *ngSwitchCase="'image'" [src]="item.src" alt="Image" class="slide-media" />
+
+            <!-- Video Slide -->
+            <video *ngSwitchCase="'video'" class="slide-media" controls>
+              <source [src]="item.src" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <!-- Text Slide -->
+            <p *ngSwitchCase="'text'">{{ item.content }}</p>
+          </ng-container>
+
+          <div class="card-content">
+            <p>{{ item.linkText }}</p>
+            <a [href]="item.link" target="_blank" class="external-link">
+              <img src="path-to-external-icon.png" alt="Link Icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper Pagination and Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
