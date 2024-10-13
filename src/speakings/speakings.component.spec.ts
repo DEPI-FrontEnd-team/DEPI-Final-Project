@@ -1,23 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SpeakingsComponent } from './speakings.component';
+import { SpeakingComponent } from './speakings.component';
+import Swiper from 'swiper/bundle';
 
 describe('SpeakingsComponent', () => {
-  let component: SpeakingsComponent;
-  let fixture: ComponentFixture<SpeakingsComponent>;
+  let component: SpeakingComponent;
+  let fixture: ComponentFixture<SpeakingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SpeakingsComponent]
-    })
-    .compileComponents();
+      declarations: [SpeakingComponent]
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(SpeakingsComponent);
+    fixture = TestBed.createComponent(SpeakingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize Swiper', () => {
+    const swiper = new Swiper('.swiper-container');
+    expect(swiper).toBeDefined();
   });
 });
