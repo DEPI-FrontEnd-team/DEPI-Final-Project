@@ -1,24 +1,41 @@
-<main>
-    
-    <div class="landingPage">
-        <div class="imgWrapper" (window:resize)="getPostion()">
-            <img class="osamaImg" src="../shared/assets/home/edited.png" alt="">
-            <h1 class="elzero" [ngStyle]="{'bottom.px': elZeroTargetPos}" >ELZERO</h1>
-            <div class="txtContainer" [ngStyle]="{ 'top.px' : elementPosX}">
-                <div class="star homestar">
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M25.4851 0.41626L31.8667 19.0346L50.4851 25.4163L31.8667 31.7979L25.4851 50.4163L19.1035 31.7979L0.485107 25.4163L19.1035 19.0346L25.4851 0.41626Z" fill="url(#paint0_linear_20_48)"/>
-                        <defs>
-                        <linearGradient id="paint0_linear_20_48" x1="-11.2705" y1="-27.9461" x2="60.6202" y2="72.0379" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#355691"/>
-                        <stop offset="1" stop-color="#79FFFD"/>
-                        </linearGradient>
-                        </defs>
-                        </svg>
-                </div>
-                <h3 class="helloim">Hello! I'm</h3>
-                <h1 class="osamamoh">Osama Mohammed</h1>
-            </div>
+<main id="home">
+  <div class="landingPage">
+    <div class="imgWrapper" (window:resize)="getPostion()">
+      <img class="osamaImg" src="../shared/assets/home/edited.png" alt="" />
+      <h1 class="elzero" [ngStyle]="{ 'bottom.px': elZeroTargetPos }">
+        ELZERO
+      </h1>
+      <div class="txtContainer" [ngStyle]="{ 'top.px': elementPosX }">
+        <div class="star homestar">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M25.4851 0.41626L31.8667 19.0346L50.4851 25.4163L31.8667 31.7979L25.4851 50.4163L19.1035 31.7979L0.485107 25.4163L19.1035 19.0346L25.4851 0.41626Z"
+              fill="url(#paint0_linear_20_48)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_20_48"
+                x1="-11.2705"
+                y1="-27.9461"
+                x2="60.6202"
+                y2="72.0379"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#355691" />
+                <stop offset="1" stop-color="#79FFFD" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
+        <h3 class="helloim">Hello! I'm</h3>
+        <h1 class="osamamoh">Osama Mohammed</h1>
+      </div>
     </div>
+  </div>
 </main>

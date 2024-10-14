@@ -1,1 +1,192 @@
-<p>contact works!</p>
+<section id="Contact">
+  <div class="contactWrapper">
+    <div class="title">
+      <div class="contactStar">
+        <img
+          src="../shared/assets/Star.svg"
+          alt="star icon, only for aesthetics"
+          data-aos="fade-down"
+          data-aos-duration="1500"
+        />
+      </div>
+      <h1>Contact & Social Media</h1>
+    </div>
+
+    <div class="formWrapper">
+      <div class="letsTalk">
+        <div class="txtContainer">
+          <h2>Let's Talk!</h2>
+          <p>Ask me anything or just say hi.</p>
+        </div>
+
+        @if (screenWidth >= 1061) {
+        <ul class="mailAndTele">
+          <li>
+            <a class="phoneNumber" href="tel:+"
+              ><img
+                src="../shared/assets/contactus/Phone.svg"
+                alt="click to her to contact osama via telephone"
+              />01155334993</a
+            >
+          </li>
+
+          <li>
+            <a href="mailto:"
+              ><img
+                src="../shared/assets/contactus/mail.svg"
+                alt="click here to contact osama via email"
+              />osama.elzero&#64;gmail.com</a
+            >
+          </li>
+        </ul>
+        }
+      </div>
+
+      <div class="form">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+          <div class="name">
+            <label id="nameLabel" for="name">Name</label>
+            <input
+              formControlName="name"
+              id="name"
+              type="text"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid':
+                  userForm.get('name')?.errors && userForm.get('name')?.touched
+              }"
+              required
+            />
+            <p
+              *ngIf="
+                !userForm.get('name')?.valid && userForm.get('name')?.touched
+              "
+            >
+              please enter a valid name, must be at least 3 chars.
+            </p>
+          </div>
+
+          <div class="email">
+            <label for="email">Email</label>
+            <input
+              class="form-control"
+              [ngClass]="{
+                'is-invalid':
+                  userForm.get('email')?.errors &&
+                  userForm.get('email')?.touched
+              }"
+              formControlName="email"
+              id="email"
+              type="text"
+            />
+            <p
+              *ngIf="
+                !userForm.get('email')?.valid && userForm.get('email')?.touched
+              "
+            >
+              please enter a valid email
+            </p>
+          </div>
+
+          <div class="message">
+            <label for="message">Message</label>
+            <textarea
+              formControlName="message"
+              contenteditable
+              name="message"
+              id="message"
+              class="form-control"
+              [ngClass]="{
+                'is-invalid':
+                  userForm.get('message')?.errors &&
+                  userForm.get('message')?.touched
+              }"
+            ></textarea>
+            <p
+              *ngIf="
+                !userForm.get('message')?.valid &&
+                userForm.get('message')?.touched
+              "
+            >
+              enter a message or just say hello!
+            </p>
+          </div>
+          <p style="color: red" *ngIf="!userForm.valid && userForm.touched">
+            {{ errorMsg }}
+          </p>
+          @if (successMsg &&userForm.valid ) {
+          <p style="color: rgb(0, 255, 0)" class="successMsg">
+            Alirght! will be in touch with you soon!
+          </p>
+          } @else {}
+          <button type="submit">Let's go!</button>
+        </form>
+        @if (screenWidth <= 1061) {
+        <ul class="mailAndTele">
+          <li>
+            <a class="phoneNumber" href="tel:+"
+              ><img
+                src="../shared/assets/contactus/Phone.svg"
+                alt="click to her to contact osama via telephone"
+              />01155334993</a
+            >
+          </li>
+
+          <li>
+            <a href="mailto:"
+              ><img
+                src="../shared/assets/contactus/mail.svg"
+                alt="click here to contact osama via email"
+              />osama.elzero&#64;gmail.com</a
+            >
+          </li>
+        </ul>
+        }
+        <div class="findMeHere">
+          <p>Find Me Here</p>
+          <ul>
+            <li>
+              <a href="https://github.com/ElzeroWebSchool" target="_blank"
+                ><img
+                  class="socialMediaIcon"
+                  src="../shared/assets/contactus/Github.svg"
+                  alt="click here to get you to osama's github"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.facebook.com/OsElzero" target="_blank"
+                ><img
+                  class="socialMediaIcon"
+                  src="../shared/assets/contactus/facebook.svg"
+                  alt="click here to get you to osama's facebook"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/in/osamaelzero" target="_blank"
+                ><img
+                  class="socialMediaIcon"
+                  src="../shared/assets/contactus/linkedin.svg"
+                  alt="click here to get you to osama's linkedin"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a href="https://x.com/Osama_Elzero" target="_blank"
+                ><img
+                  class="socialMediaIcon"
+                  src="../shared/assets/contactus/x.svg"
+                  alt="click here to get you to osama's x(formely twitter)"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

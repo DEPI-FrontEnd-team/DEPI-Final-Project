@@ -5,8 +5,13 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './call-to-action.component.html',
-  styleUrl: './call-to-action.component.css'
+  styleUrl: './call-to-action.component.css',
 })
 export class CallToActionComponent {
-
+  scrollToSection(section: string) {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

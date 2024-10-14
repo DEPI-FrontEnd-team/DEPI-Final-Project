@@ -3,16 +3,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { gsap, TweenMax, Power4, Power1, TweenLite, Expo } from 'gsap';
 import { delay } from 'rxjs';
+import { AppComponent } from '../app/app.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AppComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   screenWidth = window.innerWidth;
+  public scrollToSection(section: string) {
+    const element = document.getElementById(section);
+    console.log(element);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   constructor() {}
   ngOnInit() {
@@ -23,6 +31,7 @@ export class NavbarComponent {
       navbar?.classList.remove('mobile');
       navbar?.classList.remove('active');
     }
+    this.screenWidth = window.innerWidth;
   }
   @HostListener('window:resize') changeNavBar() {
     this.screenWidth = window.innerWidth;

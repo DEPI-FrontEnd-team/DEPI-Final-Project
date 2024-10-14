@@ -5,7 +5,8 @@ import {
   inject,
   PLATFORM_ID,
 } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule, Router } from '@angular/router';
+import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { HomeComponent } from '../home/home.component';
 import { AboutComponent } from '../about/about.component';
 import { WorkExperienceComponent } from '../work-experience/work-experience.component';
@@ -30,6 +31,7 @@ import { scan } from 'rxjs';
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterModule,
     HomeComponent,
     AboutComponent,
     WorkExperienceComponent,
@@ -43,11 +45,20 @@ import { scan } from 'rxjs';
     ContactComponent,
     CallToActionComponent,
     NavbarComponent,
+    ReactiveFormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements AfterContentInit {
+  //navigations
+  public scrollToSection(section: string) {
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   // home star animation // load up animations
   ngAfterContentInit(): void {
     // if (isPlatformBrowser(this.platformId)) {}

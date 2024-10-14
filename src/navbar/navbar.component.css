@@ -81,8 +81,10 @@ nav {
 
   transition: all 350ms ease;
 
-  h3 {
-    font-size: clamp(1rem, 0.6rem + 1vw, 1.2rem);
+  a {
+    color: var(--deftext);
+    text-decoration: none;
+    font-size: clamp(1rem, 0.6rem + 1vw, 1.1rem);
     user-select: none;
   }
 }

@@ -1,24 +1,37 @@
-<section class="container-fluid text-center text-light py-5">
-  <img src="../shared/assets/courses/Star 3.png" alt="Star" class="star-icon mb-3">
+<section id="courses" class="container-fluid text-center text-light py-5">
+  <img
+    src="../shared/assets/courses/Star 3.png"
+    alt="Star"
+    class="star-icon mb-3"
+  />
 
   <h2 class="mb-3">Helping you to achieve Greatness</h2>
-  <p class="lead mb-5">You will find whatever you need in a clever unique way to help you understand everything.</p>
+  <p class="lead mb-5">
+    You will find whatever you need in a clever unique way to help you
+    understand everything.
+  </p>
 
   <h3 class="mb-4">My Courses</h3>
 
-  <div class="carousel-container d-flex justify-content-center align-items-center">
+  <div
+    class="carousel-container d-flex justify-content-center align-items-center"
+  >
     <div class="d-flex">
-      <div *ngFor="let course of courses; let i = index"
-           class="course-card"
-           [ngClass]="{
-             'active-card': isActive(i),
-             'left-card': isLeft(i),
-             'right-card': isRight(i),
-             'dark-card': !isActive(i)
-           }">
-        <div class="card" style="width: 18rem; height: 350px;">
-          <div class="card-body"> <br>
-            <h6 class="card-title">{{ course.title }}</h6> <br>
+      <div
+        *ngFor="let course of courses; let i = index"
+        class="course-card"
+        [ngClass]="{
+          'active-card': isActive(i),
+          'left-card': isLeft(i),
+          'right-card': isRight(i),
+          'dark-card': !isActive(i)
+        }"
+      >
+        <div class="card" style="width: 18rem; height: 350px">
+          <div class="card-body">
+            <br />
+            <h6 class="card-title">{{ course.title }}</h6>
+            <br />
             <p class="card-text">{{ course.description }}</p>
           </div>
         </div>
@@ -26,11 +39,19 @@
     </div>
 
     <button (click)="prev()" class="carousel-control-prev">
-      <img src="../shared/assets/courses/left.png" class="custom-arrow" alt="Previous">
+      <img
+        src="../shared/assets/courses/left.png"
+        class="custom-arrow"
+        alt="Previous"
+      />
       <span class="visually-hidden">Previous</span>
     </button>
     <button (click)="next()" class="carousel-control-next">
-      <img src="../shared/assets/courses/right.png" class="custom-arrow" alt="Next">
+      <img
+        src="../shared/assets/courses/right.png"
+        class="custom-arrow"
+        alt="Next"
+      />
       <span class="visually-hidden">Next</span>
     </button>
   </div>

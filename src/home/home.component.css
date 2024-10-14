@@ -90,7 +90,7 @@ main {
 main::before {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   opacity: 50%;
   content: "";
@@ -100,17 +100,6 @@ main::before {
     rgba(82, 110, 235, 1) 100%
   );
   mix-blend-mode: overlay;
-  pointer-events: none;
-}
-main::after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background-image: url(../shared/assets/fade.svg);
-  background-repeat: no-repeat;
-  transform: translate(0, calc(100% - 8rem));
-  bottom: 0;
   pointer-events: none;
 }
 
