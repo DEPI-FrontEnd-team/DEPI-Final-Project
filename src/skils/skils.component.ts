@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';  // Necessary for pipes like 'number'
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-skils',
+  selector: 'app-skills-section',
   standalone: true,
-  imports: [],
-  templateUrl: './skils.component.html',
-  styleUrl: './skils.component.css'
+  imports: [NgFor,CommonModule],
+  templateUrl: './skills-section.component.html',
+  styleUrls: ['./skills-section.component.css'],
 })
-export class SkilsComponent {
+export class SkillsSectionComponent {
+  constructor() { }
 
+  ngOnInit(): void {
+  }
 }
