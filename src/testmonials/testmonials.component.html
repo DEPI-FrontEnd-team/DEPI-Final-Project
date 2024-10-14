@@ -1,1 +1,25 @@
-<p>testmonials works!</p>
+<section class="container-fluid text-center text-light">
+  @if(screenWidth >= 755){
+    <img src="../shared/assets/courses/Star 3.png" alt="Star" class="star-icon mb-3">
+  }
+    <h2 class="title">Testimonials & Recomendetion</h2>
+    <img src="../shared/assets/logo trans.png" alt="Zero-logo" class="logo-icon mb-5">
+
+
+    <!-- d-flex justify-content-center align-items-center w-100 -->
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+       <div *ngFor="let testimonial of testimonials; let i = index"
+          class="testimonial-card"
+          [style.transform]="getTransform()">
+        <div class="card">
+          <div class="card-body">
+              <img src="../shared/assets/logo trans.png" alt="" class="author">
+            <p class="text">{{ testimonial.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
