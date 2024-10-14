@@ -62,7 +62,7 @@ export class AppComponent implements AfterContentInit {
   // home star animation // load up animations
   ngAfterContentInit(): void {
     // if (isPlatformBrowser(this.platformId)) {}
-
+    let osamaImg: any = document.querySelector('.osamaImg');
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(TweenMax);
     TweenMax.fromTo(
@@ -145,6 +145,10 @@ export class AppComponent implements AfterContentInit {
         delay: 2,
       }
     );
+
+    setTimeout(() => {
+      osamaImg.style.transform = 'translate(0,0)';
+    }, 500);
   }
   // constructor(){}
   // ngOnInit() {

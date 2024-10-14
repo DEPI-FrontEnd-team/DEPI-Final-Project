@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  /* primary */
+  --bg: #151515;
+  --deftext: #f2f2f2;
+  --lighttext: #e4e4e4;
+  --faded: #26292c;
+  /* accents */
+  /* blue */
+  --blue: #407bff;
+  --fadedblue: #355690;
+  --darkblue: #1c2830;
+  --darkerblue: #1a2025;
+  --black-blue: #141b20;
+  /* green */
+  --green: #52eba1;
+  --darkgreen: #113238;
+  --darkergreen: #1a2421;
+}
+/* ############################### */
+section {
+  background-color: #151515;
+  height: 100vh; /* You must set a specified height */
+  background-image: url(../shared/assets/skills/Vector\ 14.svg);
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.header {
+  padding-top: 5.25rem;
+  text-align: center;
+}
+.header h2 {
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.8rem);
+  color: var(--deftext);
+  font-weight: 600;
+}
+.header p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--deftext);
+  padding: 10px;
+}
+.main-star {
+  padding: 1.2rem 0;
+}
+/* ############################### */
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.cards .card-c {
+  width: 450px;
+  height: 300px;
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  color: var(--lighttext);
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  overflow: hidden;
+}
+
+.cards .card-c .img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards .card-c .img img {
+  width: 100%;
+  object-fit: fill;
+}
+
+.cards .card-c .img a:last-child {
+  padding-top: 10px;
+  color: var(--deftext);
+  text-decoration: none;
+  direction: rtl;
+}
+
+.cards .card-c .link a {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.not-active {
+  /* opacity: 0.5; */
+  filter: brightness(0.5);
+  position: relative;
+  z-index: 0;
+  /* pointer-events: none; */
+}
+.active {
+  transform: scale(1.1);
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1380px) {
+  .cards .card-c {
+    width: 400px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  section {
+    height: 100%; /* You must set a specified height */
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 750px) {
+  .cards .card-c {
+    width: 300px;
+    height: 220px;
+  }
+}

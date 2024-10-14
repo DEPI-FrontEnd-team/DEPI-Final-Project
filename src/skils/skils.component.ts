@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';  // Necessary for pipes like 'number'
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-skils',
@@ -8,5 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './skils.component.css'
 })
 export class SkilsComponent {
+  constructor() { }
 
+  ngOnInit(): void {
+  }
 }

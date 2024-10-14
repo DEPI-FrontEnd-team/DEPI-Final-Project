@@ -1,1 +1,111 @@
-<p>speakings works!</p>
+<section class="Speaking-Engagements">
+  <div
+    class="header d-flex flex-column align-items-center justify-content-center mb-5"
+  >
+    <img
+      src="../shared/assets/workex/Star 3.png"
+      alt="Star icon"
+      class="main-star img-fluid"
+      data-aos="fade-down"
+      data-aos-duration="1500"
+    />
+    <h2>Speaking Engagements & Media Features</h2>
+    <p>
+      Influential and well known and respected in the MENA region, with many
+      famous public speakings, webniars, prodcasts and more.
+    </p>
+  </div>
+  <!-- ###############################  -->
+  <div class="cards">
+    <div
+      class="card-c card-1"
+      [ngClass]="{
+        active: selectedCard === 'card-1',
+        'not-active': selectedCard !== 'card-1'
+      }"
+      (click)="selectCard('card-1')"
+    >
+      <div class="img">
+        <a
+          href="https://www.youtube.com/watch?v=mb4YNWfnVps&t=15342s&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          ><img
+            src="../shared/assets/speakings/hq720 (1).webp"
+            alt="image of some people"
+        /></a>
+        <a
+          href="https://www.youtube.com/watch?v=mb4YNWfnVps&t=15342s&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          >انهاء التشتت والوهم في مجال تعلم البرمجة</a
+        >
+      </div>
+      <div class="link">
+        <a
+          href="https://www.youtube.com/watch?v=ITb_-PzX52E&t=10s&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          ><img src="../shared/assets/speakings/Icon.png" alt="link icon"
+        /></a>
+      </div>
+    </div>
+    <div
+      class="card-c card-2"
+      [ngClass]="{
+        active: selectedCard === 'card-2',
+        'not-active': selectedCard !== 'card-2'
+      }"
+      (click)="selectCard('card-2')"
+    >
+      <div class="img">
+        <a
+          href="https://www.youtube.com/watch?v=ITb_-PzX52E&t=10s&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          ><img
+            src="../shared/assets/speakings/hq720.webp"
+            alt="image of some people"
+        /></a>
+        <a
+          href="https://www.youtube.com/watch?v=ITb_-PzX52E&t=10s&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          >ما لا تعرفه عن Front-end</a
+        >
+      </div>
+      <div class="link">
+        <a
+          href="https://www.youtube.com/watch?v=ITb_-PzX52E&t=10s&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          ><img src="../shared/assets/speakings/Icon.png" alt="link icon"
+        /></a>
+      </div>
+    </div>
+    <div
+      class="card-c card-3"
+      [ngClass]="{
+        active: selectedCard === 'card-3',
+        'not-active': selectedCard !== 'card-3'
+      }"
+      (click)="selectCard('card-3')"
+    >
+      <div class="img">
+        <a
+          href="https://www.youtube.com/watch?v=5wpp3vFM41U&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          ><img
+            src="../shared/assets/speakings/hqdefault.webp"
+            alt="image of some people"
+        /></a>
+        <a
+          href="https://www.youtube.com/watch?v=5wpp3vFM41U&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          >أشهر مبرمج عربي، لم يدرس البرمجة | أسامة الزيرو</a
+        >
+      </div>
+      <div class="link">
+        <a
+          href="https://www.youtube.com/watch?v=5wpp3vFM41U&pp=ygUVb3NhbWEgZWx6ZXJvIHBvZGNhc3Qg"
+          target="_blank"
+          ><img src="../shared/assets/speakings/Icon.png" alt="link icon"
+        /></a>
+      </div>
+    </div>
+  </div>
+</section>
