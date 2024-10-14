@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';  // Necessary for pipes like 'nu
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-skills-section',
+  selector: 'app-skils',
   standalone: true,
-  imports: [NgFor,CommonModule],
-  templateUrl: './skills-section.component.html',
-  styleUrls: ['./skills-section.component.css'],
+  imports: [],
+  templateUrl: './skils.component.html',
+  styleUrl: './skils.component.css'
 })
-export class SkillsSectionComponent {
+export class SkilsComponent {
   constructor() { }
 
   ngOnInit(): void {
