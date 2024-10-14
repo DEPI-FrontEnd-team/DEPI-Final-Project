@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -13,10 +14,26 @@ section {
   background-size: cover;
 }
 
-h2, h3, p {
+h2,
+h3,
+p {
   color: #fff;
 }
+#carouselExample {
+  width: 60%;
+}
 
+#coursesSectionTitle {
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.8rem) !important;
+}
+#coursesSectionDesc {
+  font-size: clamp(0.6rem, 0.8rem + 0.7vw, 1.5rem) !important;
+  font-weight: 200 !important;
+  opacity: 0.8;
+}
+#myCoursesCardsTitle {
+  font-size: clamp(1.3rem, 1rem + 2vw, 2rem) !important;
+}
 .carousel-container {
   position: relative;
   width: 100%;
@@ -45,7 +62,7 @@ h2, h3, p {
   color: #fff;
   text-align: center;
   width: 18rem;
-  height: 350px; 
+  height: 350px;
   flex-shrink: 0;
   font-size: 12px;
 }
@@ -55,7 +72,8 @@ h2, h3, p {
   transform: scale(1.1);
 }
 
-.left-card, .right-card {
+.left-card,
+.right-card {
   opacity: 0.5;
   transform: scale(0.9);
 }
@@ -64,7 +82,8 @@ h2, h3, p {
   width: 40px;
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -81,6 +100,21 @@ h2, h3, p {
   right: 10px;
 }
 
+@media screen and (max-width: 1050px) {
+  #carouselExample {
+    min-width: 400px;
+  }
+}
+@media screen and (max-width: 430px) {
+  #carouselExample {
+    min-width: 100%;
+    width: 100%;
+    .carousel-item img {
+      width: 110% !important;
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .course-card {
     width: 100%;
@@ -89,8 +123,8 @@ h2, h3, p {
   }
 
   .card {
-    width: 14rem; 
-    height: 250px; 
+    width: 14rem;
+    height: 250px;
     font-size: 12px;
   }
 
@@ -102,7 +136,8 @@ h2, h3, p {
     width: 30px;
   }
 
-  .carousel-control-prev, .carousel-control-next {
-    top: 60%; 
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 60%;
   }
 }
