@@ -32,7 +32,7 @@ section {
   padding-bottom: 30px;
   background-color: var(--bg);
   min-height: 100vh;
-  background-image: url("../shared/assets/testimonials/bg.svg");
+  background-image: url("../shared/assets/testimonials/bg.png");
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
