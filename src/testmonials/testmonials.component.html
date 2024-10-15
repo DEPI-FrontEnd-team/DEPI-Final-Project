@@ -10,24 +10,29 @@
   <img
     src="../shared/assets/logo trans.png"
     alt="Zero-logo"
-    class="logo-icon mb-5"
+    class="logo-icon mt-5"
   />
 
-  <!-- d-flex justify-content-center align-items-center w-100 -->
-  <div class="carousel-container">
-    <div class="carousel-wrapper">
-      <div
-        *ngFor="let testimonial of testimonials; let i = index"
-        class="testimonial-card"
-        [style.transform]="getTransform()"
-      >
-        <div class="card">
-          <div class="card-body">
-            <img src="../shared/assets/logo trans.png" alt="" class="author" />
-            <p class="text">{{ testimonial.text }}</p>
-          </div>
-        </div>
-      </div>
+  <div class="cardsWrapper">
+    <div class="card-slide">
+      <img src="../shared/assets/testimonials/card-1.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-2.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-3.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-4.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-5.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-6.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-7.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-8.jpg" alt="" />
+    </div>
+    <div class="card-slide">
+      <img src="../shared/assets/testimonials/card-1.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-2.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-3.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-4.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-5.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-6.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-7.jpg" alt="" />
+      <img src="../shared/assets/testimonials/card-8.jpg" alt="" />
     </div>
   </div>
 </section>
