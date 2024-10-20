@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0 5.25rem;
+  padding: 5rem 5.25rem;
 }
 
 .letsTalk {
@@ -81,6 +81,7 @@
 .form {
   width: 50%;
   height: 100%;
+  gap: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
