@@ -31,20 +31,20 @@
     </div>
     <div class="navigationWrapper">
       <div class="itemsWrapper">
-        <div class="navigationItem">
+        <div (click)="scrollToSection('home')" class="navigationItem">
           <h3>Home</h3>
         </div>
-        <div class="navigationItem">
+        <div (click)="scrollToSection('aboutMe')" class="navigationItem">
           <h3>About</h3>
         </div>
-        <div class="navigationItem">
+        <div (click)="scrollToSection('courses')" class="navigationItem">
           <h3>Courses</h3>
         </div>
-        <div class="navigationItem">
+        <div (click)="scrollToSection('Contact')" class="navigationItem">
           <h3>Contact</h3>
         </div>
         <div class="navigationItem">
-          <h3>Support</h3>
+          <a href="https://elzero.org/support/" target="_blank">Support</a>
         </div>
       </div>
     </div>
