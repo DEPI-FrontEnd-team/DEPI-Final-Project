@@ -16,10 +16,31 @@ export class NavbarComponent {
   screenWidth = window.innerWidth;
   public scrollToSection(section: string) {
     const element = document.getElementById(section);
-    console.log(element);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    let navbar = document.querySelector('#navbar') as HTMLHtmlElement;
+    let main = document.querySelector('main');
+    let body = document.querySelector('body');
+    let mobile = document.querySelector('#navbar.mobile') as HTMLHtmlElement;
+    navbar?.classList.toggle('active');
+    TweenMax.fromTo(
+      '.mobile',
+      0.2,
+      {
+        height: window.innerHeight,
+        ease: Expo.easeInOut,
+      },
+      {
+        height: 80,
+        ease: Expo.easeInOut,
+      }
+    );
+
+    main!.style.pointerEvents = 'auto';
+    body!.style.height = 'auto';
+    body!.style.overflow = 'auto';
+    navbar!.style.height = 'auto';
   }
 
   constructor() {}
@@ -54,7 +75,7 @@ export class NavbarComponent {
 
     gsap.registerPlugin(TweenMax);
 
-    // morphing the burger butto to be a close button
+    // morphing the burger button to be a close button
     if (navbar?.classList.contains('active')) {
       TweenMax.fromTo(
         '.active',
